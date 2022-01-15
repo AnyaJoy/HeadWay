@@ -104,14 +104,24 @@ export default function WeatherScreen({ navigation }) {
 
   return (
     <>
-      {isLoading ? (
+      {!isLoading ? (
         <View>
-          <Text>Fetching the weather</Text>
+          <Text
+            style={{
+              backgroundColor: Colors.purple,
+              color: Colors.white,
+              height: "100%",
+              textAlign: "center",
+              textAlignVertical: "center",
+            }}
+          >
+            Fetching the weather...
+          </Text>
         </View>
       ) : (
         <View style={styles.container}>
           <View style={styles.flexBetween}>
-            <H3 style={styles.header}>PROFILE</H3>
+            <H3 style={styles.header}>WEATHER</H3>
             <View style={styles.flex}>
               <MaterialCommunityIcons
                 name="map-marker"
@@ -195,7 +205,7 @@ const styles = StyleSheet.create({
     color: Colors.white,
     fontSize: 20,
     letterSpacing: 3,
-    fontWeight: "700",
+    // fontWeight: "700",
   },
   image: {
     marginTop: 15,
